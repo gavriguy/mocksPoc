@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "60958ffd543ddca5bef3"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "7854280d2e885c3d437f"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -9409,8 +9409,6 @@
 	var _componentsHp = __webpack_require__(243);
 
 	var _componentsHp2 = _interopRequireDefault(_componentsHp);
-
-	debugger;
 
 	_axios2['default'].get('versions.json').then(function (response) {
 	  console.log(response);
@@ -30367,7 +30365,7 @@
 	      props.versions.map(function (object, i) {
 	        return _react2['default'].createElement(
 	          _reactBootstrapLib.ListGroupItem,
-	          { href: '/' + object },
+	          { href: '' + location.href + object },
 	          'Version ',
 	          object
 	        );
