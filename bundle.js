@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "317206ed73f01cfb22ca"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "208996536b59c4cc6d90"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -9410,7 +9410,7 @@
 
 	var _componentsHp2 = _interopRequireDefault(_componentsHp);
 
-	_axios2['default'].get('/versions.json').then(function (response) {
+	_axios2['default'].get('versions.json').then(function (response) {
 	  console.log(response);
 	  _reactDom2['default'].render(_react2['default'].createElement(_componentsHp2['default'], { versions: response.data }), document.getElementById('app'));
 	})['catch'](function (response) {
