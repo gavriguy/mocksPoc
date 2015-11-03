@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "208996536b59c4cc6d90"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "60958ffd543ddca5bef3"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -9409,6 +9409,8 @@
 	var _componentsHp = __webpack_require__(243);
 
 	var _componentsHp2 = _interopRequireDefault(_componentsHp);
+
+	debugger;
 
 	_axios2['default'].get('versions.json').then(function (response) {
 	  console.log(response);
