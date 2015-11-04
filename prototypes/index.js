@@ -46,10 +46,10 @@ const App = (props) => {
 };
 App.propTypes = { children: React.PropTypes.element.isRequired };
 
-const PagesList = () => {
+const PageList = () => {
   return (
     <div className="container">
-      <h3>Pages List <Badge>{window.version}</Badge></h3>
+      <h3>Page List <Badge>{window.version}</Badge></h3>
       <ListGroup>
       {version().routes.map((route, ind) => {
         return (
@@ -73,7 +73,7 @@ const PagesList = () => {
 const routes = [{
   path: '/',
   component: App,
-  indexRoute: { component: PagesList },
+  indexRoute: { component: PageList },
   childRoutes: [{
     childRoutes: version().routes,
   }],
