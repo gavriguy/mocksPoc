@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import { Router, Link } from 'react-router';
-import version from './version';
+import version from '../version';
 import qs from 'qs';
 import {
   ListGroup,
@@ -17,6 +17,7 @@ const Menu = (props) => {
   return (
     <div style={{position: 'fixed', bottom: 0, right: 0}}>
       <DropdownButton
+        id="menu"
         bsStyle="link"
         title={<Glyphicon glyph="option-vertical"/>}
         noCaret
@@ -53,7 +54,7 @@ const PageList = () => {
       <ListGroup>
       {version().routes.map((route, ind) => {
         return (
-          <ListGroupItem id={ind}>
+          <ListGroupItem key={ind}>
             <Link
               to={route.path}
               style={{ color: '#444', textDecoration: 'none' }}
@@ -68,7 +69,6 @@ const PageList = () => {
     </div>
   );
 };
-
 
 const routes = [{
   path: '/',
