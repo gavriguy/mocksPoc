@@ -4,7 +4,7 @@ export default () => {
     description: 'The version description',
     routes: [
       {
-        label: 'Dummy Label',
+        label: 'Dummy Label1',
         path: 'dummy',
         component: Dummy,
       },

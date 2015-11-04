@@ -2,6 +2,6 @@ import React from 'react';
 
 export default (props) => {
   return (
-      <div>Dummy</div>
+      <div>Dummy1</div>
   );
 };
