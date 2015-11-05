@@ -9,7 +9,7 @@ import {ComponentStateWrapper} from './components/Menu';
 const routes = [{
   path: '/',
   component: App,
-  indexRoute: { component: PageList },
+  indexRoute: { component: ComponentStateWrapper(PageList) },
   childRoutes: [{
     childRoutes: version().routes.map((route) => {
       route.component = ComponentStateWrapper(
