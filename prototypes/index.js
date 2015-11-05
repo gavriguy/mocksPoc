@@ -4,30 +4,7 @@ import { Router } from 'react-router';
 import App from './components/App';
 import PageList from './components/PageList';
 import version from '../version';
-
-import dotty from 'dotty';
-// import map from 'lodash/collection/map';
-import Menu from './components/Menu';
-
-const getFixtureIndex = ({location}) => {
-  const fixtureIndex = dotty.get(location, 'query.fixtureIndex');
-  return Number(fixtureIndex ? fixtureIndex : 0);
-};
-
-const ComponentStateWrapper = (component, fixtures = [{label: 'default'}]) => {
-  return (props) => {
-    const componentWithFixture = component(fixtures[getFixtureIndex(props)]);
-    return (
-      <div>
-        {componentWithFixture}
-        <Menu
-          fixtures={fixtures}
-          location={props.location}
-        />
-      </div>
-    );
-  };
-};
+import {ComponentStateWrapper} from './components/Menu';
 
 const routes = [{
   path: '/',

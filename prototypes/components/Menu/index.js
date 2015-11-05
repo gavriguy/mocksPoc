@@ -8,6 +8,28 @@ import {
   MenuItem,
 } from 'react-bootstrap/lib';
 
+import dotty from 'dotty';
+
+const getFixtureIndex = ({location}) => {
+  const fixtureIndex = dotty.get(location, 'query.fixtureIndex');
+  return Number(fixtureIndex ? fixtureIndex : 0);
+};
+
+export const ComponentStateWrapper = (component, fixtures = [{label: 'default'}]) => {
+  return (props) => {
+    const componentWithFixture = component(fixtures[getFixtureIndex(props)]);
+    return (
+      <div>
+        {componentWithFixture}
+        <Menu
+          fixtures={fixtures}
+          location={props.location}
+        />
+      </div>
+    );
+  };
+};
+
 const Menu = (props) => {
   const {hp} = qs.parse(location.search.substring(1));
   return (
@@ -30,8 +52,13 @@ const Menu = (props) => {
         <MenuItem header>States</MenuItem>
         {props.fixtures.map((fixture, ind) => {
           return (
-            <MenuItem>
-              <Link to={props.location.pathname} query={{fixtureIndex: ind}}>{fixture.label}</Link>
+            <MenuItem active={ind === getFixtureIndex(props)}>
+              <Link
+                to={props.location.pathname}
+                query={{fixtureIndex: ind}}
+              >
+                {fixture.label}
+              </Link>
             </MenuItem>
           );
         })}
