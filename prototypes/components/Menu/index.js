@@ -33,6 +33,10 @@ ComponentStateWrapper.propTypes = {location: React.PropTypes.object};
 
 const Menu = (props) => {
   const {hp} = qs.parse(location.search.substring(1));
+  const logout = () => {
+    window.sessionStorage.pa = null;
+    window.location.reload();
+  };
   return (
     <div style={{position: 'fixed', bottom: 0, right: 0}}>
       <DropdownButton
@@ -43,6 +47,7 @@ const Menu = (props) => {
         dropup
         pullRight={true}
       >
+        <MenuItem onClick={logout}>Logout</MenuItem>
         <MenuItem header>Menu</MenuItem>
         <MenuItem href={decodeURIComponent(hp)}>All Versions</MenuItem>
         <MenuItem
@@ -50,7 +55,7 @@ const Menu = (props) => {
         >
             Page List
         </MenuItem>
-        <MenuItem header>States</MenuItem>
+        <MenuItem header>Fixtures</MenuItem>
         {props.fixtures.map((fixture, ind) => {
           return (
             <MenuItem key={ind} active={ind === getFixtureIndex(props)}>
