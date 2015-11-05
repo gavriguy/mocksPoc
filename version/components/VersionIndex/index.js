@@ -54,24 +54,21 @@ const signingIos = (disabled) => {
     labelClassName="col-xs-3"
     wrapperClassName="col-xs-5"
     disabled={disabled}
-  >
-  </Input>
+  />
   <Input
     type="text"
     label="iTunes Connect User"
     labelClassName="col-xs-3"
     wrapperClassName="col-xs-5"
     disabled={disabled}
-  >
-  </Input>
+  />
   <Input
     type="password"
     label="iTunes Connect Password"
     labelClassName="col-xs-3"
     wrapperClassName="col-xs-5"
     disabled={disabled}
-  >
-  </Input>
+  />
   </div>
 );
 };
@@ -101,56 +98,51 @@ const signingAndroid = (disabled) => {
       labelClassName="col-xs-3"
       wrapperClassName="col-xs-5"
       disabled={disabled}
-    >
-    </Input>
+    />
     <Input
       type="password"
       label="Key Password"
       labelClassName="col-xs-3"
       wrapperClassName="col-xs-5"
       disabled={disabled}
-    >
-    </Input>
+    />
     </div>
-  )
-}
-//let additonalFields = <h1>a</h1>;
+  );
+};
 
-const handleChange = (props) => (e) => {
-  console.log(props, e.target.value);
-  if (e.target.value === 'debugOnly')  {
-    location.replace('#/version-index?fixtureIndex=2')
+const handleChange = () => (event) => {
+  if (event.target.value === 'debugOnly') {
+    location.replace('#/version-index?fixtureIndex=2');
+  } else {
+    location.replace('#/version-index?fixtureIndex=1');
   }
-  else  {
-    location.replace('#/version-index?fixtureIndex=1')
-  }
-}
+};
 
 export const fixtures = [
   {
-    label: "versions Index"
+    label: 'versions Index',
   },
   {
-    label: "iOS Bulid Modal with signing",
+    label: 'iOS Bulid Modal with signing',
     buildModalOpen: true,
     signing: signingIos(),
-    icon: applIco
+    icon: applIco,
   },
   {
-    label: "Bulid Modal without signing",
+    label: 'Bulid Modal without signing',
     buildModalOpen: true,
-    icon: applIco
+    icon: applIco,
   },
   {
-    label: "Android Bulid Modal without signing",
+    label: 'Android Bulid Modal without signing',
     buildModalOpen: true,
     signing: signingAndroid(),
-    icon: andrIcon
+    icon: andrIcon,
   },
   {
-    label: "Download Modal",
+    label: 'Download Modal',
     downloadModalOpen: true,
-  }
+  },
 ];
 
 const VersionIndex = (props) => {
@@ -201,7 +193,7 @@ const VersionIndex = (props) => {
                 <MenuItem eventKey="4">Localization</MenuItem>
               </DropdownButton>
 
-              <Button bsStyle="success" disabled={true} onClick={()=>{ location.replace('#/version-index?fixtureIndex=1')}}><Glyphicon glyph="play"/></Button>
+              <Button bsStyle="success" disabled={true} onClick={()=>{ location.replace('#/version-index?fixtureIndex=1');}}><Glyphicon glyph="play"/></Button>
               <Note>On Build is in progeress-  editing and rebuilding are disabled</Note>
             </ButtonToolbar>
           </td>
@@ -220,7 +212,7 @@ const VersionIndex = (props) => {
                 <MenuItem eventKey="3">Assets</MenuItem>
                 <MenuItem eventKey="4">Localization</MenuItem>
               </DropdownButton>
-              <Button bsStyle="success" onClick={()=>{ location.replace('#/version-index?fixtureIndex=1')}}><Glyphicon glyph="play"/></Button>
+              <Button bsStyle="success" onClick={()=>{ location.replace('#/version-index?fixtureIndex=1');}}><Glyphicon glyph="play"/></Button>
             </ButtonToolbar>
           </td>
         </tr>
@@ -238,7 +230,7 @@ const VersionIndex = (props) => {
                   <MenuItem eventKey="3">Assets</MenuItem>
                   <MenuItem eventKey="4">Localization</MenuItem>
                 </DropdownButton>
-                <Button bsStyle="success" onClick={()=>{ location.replace('#/version-index?fixtureIndex=3')}}><Glyphicon glyph="play"/></Button>
+                <Button bsStyle="success" onClick={()=>{ location.replace('#/version-index?fixtureIndex=3');}}><Glyphicon glyph="play"/></Button>
               </ButtonToolbar>
             </td>
           </tr>
@@ -266,7 +258,7 @@ const VersionIndex = (props) => {
             <td>2.5.2</td>
             <td>1.0</td>
             <td>
-              <Button bsStyle="primary" onClick={()=>{ location.replace('#/version-index?fixtureIndex=4')}} >
+              <Button bsStyle="primary" onClick={()=>{ location.replace('#/version-index?fixtureIndex=4');}} >
                 <Glyphicon glyph="save"/>
               </Button> <b>#34</b> Oct 22, 2015  17:22
             </td>
@@ -284,7 +276,7 @@ const VersionIndex = (props) => {
           </tr>
         </tbody>
       </Table>
-      <Modal show={props.buildModalOpen} onHide={()=>{ location.replace('#/version-index')}}>
+      <Modal show={props.buildModalOpen} onHide={()=>{ location.replace('#/version-index');}}>
         <Modal.Header closeButton><Modal.Title>{props.icon} Build Version 1.0</Modal.Title></Modal.Header>
         <Modal.Body>
           <form className="form-horizontal">
@@ -308,7 +300,7 @@ const VersionIndex = (props) => {
           </form>
         </Modal.Body>
       </Modal>
-      <Modal show={props.downloadModalOpen} onHide={()=>{ location.replace('#/version-index')}}>
+      <Modal show={props.downloadModalOpen} onHide={()=>{ location.replace('#/version-index');}}>
         <Modal.Header closeButton><Modal.Title>
           {andrIcon} App Name - Version 1.0 - build #34
         </Modal.Title><Note>Click on the QRcode to see the page it redirects to</Note></Modal.Header>
@@ -316,7 +308,7 @@ const VersionIndex = (props) => {
           <div className="text-center">
 
             <a href={`${location.origin}\#mobile-download`}>
-              <QRCode  value={`${location.origin}\#mobile-download`} />
+              <QRCode value={`${location.origin}\#mobile-download`} />
               <p>Scan QR Code from your mobile</p>
             </a>
           </div>
@@ -330,8 +322,8 @@ const VersionIndex = (props) => {
       </Modal>
     </div>
     </div>
-  )
-}
+  );
+};
 
 VersionIndex.fixtures = fixtures;
 export default VersionIndex;
