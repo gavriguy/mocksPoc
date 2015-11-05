@@ -29,6 +29,7 @@ export const ComponentStateWrapper = (component, fixtures = [{label: 'default'}]
     );
   };
 };
+ComponentStateWrapper.propTypes = {location: React.PropTypes.object};
 
 const Menu = (props) => {
   const {hp} = qs.parse(location.search.substring(1));
@@ -52,7 +53,7 @@ const Menu = (props) => {
         <MenuItem header>States</MenuItem>
         {props.fixtures.map((fixture, ind) => {
           return (
-            <MenuItem active={ind === getFixtureIndex(props)}>
+            <MenuItem key={ind} active={ind === getFixtureIndex(props)}>
               <Link
                 to={props.location.pathname}
                 query={{fixtureIndex: ind}}
