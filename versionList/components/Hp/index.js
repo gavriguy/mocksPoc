@@ -10,7 +10,7 @@ export default (props) => {
     <div className="container">
       <h1>Prototypes</h1>
       <ListGroup>
-      {props.versions.map((object, ind) => {
+      {props.versions.reverse().map((object, ind) => {
         return (
           <ListGroupItem
             href={`${location.href}${object}?hp=${encodeURIComponent(location.href)}`}
