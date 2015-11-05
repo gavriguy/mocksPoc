@@ -4,8 +4,7 @@ import {
   ListGroupItem,
 } from 'react-bootstrap/lib';
 
-
-export default (props) => {
+const Hp = (props) => {
   return (
     <div className="container">
       <h1>Prototypes</h1>
@@ -13,6 +12,7 @@ export default (props) => {
       {props.versions.reverse().map((object, ind) => {
         return (
           <ListGroupItem
+            key={ind}
             href={`${location.href}${object}?hp=${encodeURIComponent(location.href)}`}
           >
             Version {object}
@@ -23,3 +23,6 @@ export default (props) => {
     </div>
   );
 };
+Hp.propTypes = {versions: React.PropTypes.array};
+
+export default Hp;
