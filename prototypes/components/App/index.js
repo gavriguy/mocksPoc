@@ -5,7 +5,6 @@ const App = (props) => {
   return (
     <div>
       {props.children}
-      <Menu header="Menu"/>
     </div>
   );
 };

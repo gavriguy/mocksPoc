@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "axios": "^0.7.0",
+    "dotty": "0.0.2",
     "eslint": "^1.8.0",
     "eslint-config-airbnb": "^0.1.0",
     "eslint-plugin-react": "^3.6.3",
