@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "29db80b91d244d8c886d"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "229009bb6110d1767b55"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -21533,7 +21533,7 @@
 
 	var _reactBootstrapLib = __webpack_require__(185);
 
-	exports['default'] = function (props) {
+	var Hp = function Hp(props) {
 	  return _react2['default'].createElement(
 	    'div',
 	    { className: 'container' },
@@ -21545,10 +21545,11 @@
 	    _react2['default'].createElement(
 	      _reactBootstrapLib.ListGroup,
 	      null,
-	      props.versions.map(function (object, ind) {
+	      props.versions.reverse().map(function (object, ind) {
 	        return _react2['default'].createElement(
 	          _reactBootstrapLib.ListGroupItem,
 	          {
+	            key: ind,
 	            href: '' + location.href + object + '?hp=' + encodeURIComponent(location.href)
 	          },
 	          'Version ',
@@ -21558,7 +21559,9 @@
 	    )
 	  );
 	};
+	Hp.propTypes = { versions: _react2['default'].PropTypes.array };
 
+	exports['default'] = Hp;
 	module.exports = exports['default'];
 
 	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(422); if (makeExportsHot(module, __webpack_require__(66))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
