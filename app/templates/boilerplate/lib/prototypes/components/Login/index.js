@@ -9,8 +9,12 @@ import {
 export default (props) => {
   const login = (event) => {
     window.sessionStorage.pa = md5(event.target.form[0].value);
-    event.target.form[0].value = "";
-    props.history.pushState(null, '/');
+    event.target.form[0].value = '';
+    if (props.history) {
+      props.history.pushState(null, '/');
+    } else {
+      location.reload();
+    }
   };
   return (
     <div className="container" >
