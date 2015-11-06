@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "babel-node build.js",
-    "deploy": "npm version minor && babel-node build.js && git push && git push --tags && node gh-deploy.js",
+    "build": "babel-node ./scripts/build.js",
+    "deploy": "npm version minor && babel-node scripts/build.js && git push && git push --tags && scripts/node gh-deploy.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
