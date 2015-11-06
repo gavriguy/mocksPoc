@@ -1,3 +1,4 @@
+import pack from '../../package.json';
 import React from 'react';
 import ReactDom from 'react-dom';
 import { Router } from 'react-router';
@@ -7,13 +8,11 @@ import Login from './components/Login';
 import version from '../../src';
 import {ComponentStateWrapper} from './components/Menu';
 
-
 function requireAuth(nextState, replaceState) {
-  if (window.sessionStorage.pa !== 'abc') {
+  if (window.sessionStorage.pa !== pack.accessKey) {
     replaceState({ nextPathname: nextState.location.pathname }, '/login');
   }
 }
-
 
 const routes = [{
   path: '/',

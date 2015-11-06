@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import md5 from 'blueimp-md5';
 import {
   Input,
   Button,
@@ -7,7 +8,7 @@ import {
 
 export default (props) => {
   const login = (event) => {
-    window.sessionStorage.pa = event.target.form[0].value;
+    window.sessionStorage.pa = md5(event.target.form[0].value);
     event.target.form[0].value = "";
     props.history.pushState(null, '/');
   };
@@ -17,8 +18,9 @@ export default (props) => {
       <form className="form-horizontal" >
         <Input
           type="password"
+          placeholder="Insert Access Key"
           wrapperClassName="col-xs-4 col-md-offset-4"
-          buttonAfter={<Button onClick={login}>Login</Button>}
+          buttonAfter={<Button onClick={login}>Enter</Button>}
         />
       </form>
     </div>

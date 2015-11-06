@@ -14,6 +14,10 @@ module.exports = {
       loader: 'react-hot!babel'
     },
     {
+      test: /\.json?$/,
+      loader: 'json'
+    },
+    {
       test: /\.(jpe?g|png|gif|svg)$/i,
       loader: 'file?hash=sha512&digest=hex&name=[hash].[ext]'
     },
