@@ -8,7 +8,7 @@ const BUILD_FOLDER = `${process.cwd()}/dist`;
 const webpackBuildHp = (config) => {
   config.output.path = BUILD_FOLDER;
   config.entry = [
-    '../lib/versionList/index.js',
+    './lib/versionList/index.js',
   ];
   webpack(config, (err) => {
     if (err) {
@@ -20,9 +20,9 @@ const webpackBuildHp = (config) => {
 
 const webpackBuildVersion = (config) => {
   return new Promise((resolve, reject) => {
-    config.output.path = `${process.cwd()}/${BUILD_FOLDER}/${pack.version}`;
+    config.output.path = `${BUILD_FOLDER}/${pack.version}`;
     config.entry = [
-      '../lib/prototypes/index.js',
+      './lib/prototypes/index.js',
     ];
     webpack(config, (err) => {
       if (err) {
