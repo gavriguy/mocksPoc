@@ -53,7 +53,7 @@ const Menu = (props) => {
         <MenuItem
           href={`${location.origin}${location.pathname}${location.search}`}
         >
-            Page List
+            Screens List
         </MenuItem>
         <MenuItem header>Fixtures</MenuItem>
         {props.fixtures.map((fixture, ind) => {

@@ -10,7 +10,7 @@ import {
 export default () => {
   return (
     <div className="container">
-      <h3>Page List <Badge>{window.version}</Badge></h3>
+      <h3>Screens List <Badge>{window.version}</Badge></h3>
       <ListGroup>
       {version().routes.map((route, ind) => {
         return (

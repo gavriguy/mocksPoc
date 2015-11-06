@@ -1,4 +1,4 @@
-import pack from '../../package.json';
+import accessKey from '../../accessKey.json';
 import React from 'react';
 import ReactDom from 'react-dom';
 import { Router } from 'react-router';
@@ -9,7 +9,7 @@ import version from '../../src';
 import {ComponentStateWrapper} from './components/Menu';
 
 function requireAuth(nextState, replaceState) {
-  if (window.sessionStorage.pa !== pack.accessKey) {
+  if (window.sessionStorage.pa !== accessKey.accessKey) {
     replaceState({ nextPathname: nextState.location.pathname }, '/login');
   }
 }
