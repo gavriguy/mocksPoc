@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import version from '../../../version';
+import version from '../../../../src';
 import {
   Badge,
   ListGroup,

@@ -8,7 +8,7 @@ const BUILD_FOLDER = `${process.cwd()}/dist`;
 const webpackBuildHp = (config) => {
   config.output.path = BUILD_FOLDER;
   config.entry = [
-    '../versionList/index.js',
+    '../lib/versionList/index.js',
   ];
   webpack(config, (err) => {
     if (err) {
@@ -22,7 +22,7 @@ const webpackBuildVersion = (config) => {
   return new Promise((resolve, reject) => {
     config.output.path = `${process.cwd()}/${BUILD_FOLDER}/${pack.version}`;
     config.entry = [
-      '../prototypes/index.js',
+      '../lib/prototypes/index.js',
     ];
     webpack(config, (err) => {
       if (err) {
@@ -53,8 +53,8 @@ const createVersions = () => {
 
 const copyHtmls = () => {
   console.log(`${pack.version}`)
-  fs.copySync(path.resolve(process.cwd(), './index.html'), `${BUILD_FOLDER}/index.html`);
-  fs.copySync(path.resolve(process.cwd(), './index.html'), `${BUILD_FOLDER}/${pack.version}/index.html`);
+  fs.copySync(path.resolve(process.cwd(), './lib/index.html'), `${BUILD_FOLDER}/index.html`);
+  fs.copySync(path.resolve(process.cwd(), './lib/index.html'), `${BUILD_FOLDER}/${pack.version}/index.html`);
 }
 
 webpackBuildHp(config);

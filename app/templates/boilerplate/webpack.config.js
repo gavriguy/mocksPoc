@@ -4,7 +4,7 @@ module.exports = {
   entry: [
     'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server',
-    './prototypes/index.js'
+    './lib/prototypes/index.js'
   ],
 
   module: {
@@ -26,12 +26,12 @@ module.exports = {
     extensions: ['', '.js', '.jsx']
   },
   output: {
-    path: __dirname + '/local',
+    path: __dirname + '/lib/local',
     publicPath: '/',
     filename: 'bundle.js'
   },
   devServer: {
-    contentBase: './local',
+    contentBase: './lib/local',
     hot: true
   },
   plugins: [

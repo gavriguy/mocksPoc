@@ -4,7 +4,7 @@ import { Router } from 'react-router';
 import App from './components/App';
 import PageList from './components/PageList';
 import Login from './components/Login';
-import version from '../version';
+import version from '../../src';
 import {ComponentStateWrapper} from './components/Menu';
 
 
